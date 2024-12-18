@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: rgb(41, 45, 42);
+        }
+
+        .container {
+            width: 100vw;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 4rem;
+            color: white;
+            background-color: #639a63;
+            padding: 0 2rem; 
+            font-weight: 500;
+        }
+
+        .logo {
+            margin-left: 1rem; 
+        }
+
+        .logo img {
+            width: 4rem;
+            height: 4rem;
+            cursor: pointer;
+        }
+
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            padding-left: 2rem; 
+        }
+
+        .nav ul li {
+            list-style: none;
+            font-size: 1.2rem;
+            margin-right: 1.5rem;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav ul li a:hover {
+            color: orange;
+        }
+
+        .nav ul li.active a {
+            text-decoration: underline;
+            color: orange;
+            text-decoration-color: orange;
+        }
+
+        .btn {
+            height: 2rem;
+            width: 6rem;
+            margin-left: 0.5rem;
+            border-radius: 1.1rem;
+            border: 2px solid rgb(196, 203, 197);
+            font-size: large;
+            font-weight: 400;
+            cursor: pointer;
+            color: white;
+            background-color: orange;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: rgb(225, 149, 10);
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="navbar">
+            <div class="nav">
+                <div class="logo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/8910/8910722.png" onclick="window.location.href='/'" alt="Logo">
+                </div>
+                <ul>
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link">Expense</a></li>
+                    <li><a href="#" class="nav-link">Profile</a></li>
+                    <li><a href="#" class="nav-link">Account</a></li>
+                    <li><a href="#" class="nav-link">About Us</a></li>
+                    <li><a href="#" class="nav-link">Contact Us</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <% if (!currUser) { %>
+                        <button class="btn" onclick="window.location.href='/login'">Login</button>
+                        <button class="btn" onclick="window.location.href='/signup'">Sign Up</button>
+                    <% } else { %>
+                        <button class="btn" onclick="window.location.href='/logout'">Logout</button>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
